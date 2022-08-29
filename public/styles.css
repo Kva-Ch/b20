@@ -1,0 +1,131 @@
+/* green 
+#0F3D3E
+
+grey1
+#F1F1F1
+
+grey2 & title grey
+#D5D5D5
+
+blue1
+#6CE5E8
+
+cobalt blue
+#41B8D5
+
+dark cobalt
+#41B8D5
+
+blue2
+#2D8BBA */
+
+body{
+    background-color: #0F3D3E;
+}
+
+.grey1{
+    background-color: #F1F1F1;
+    width: 100%;
+    height: 100vh;
+}
+
+.loginscreen {
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    font-family: 'Pacifico', cursive;
+    justify-content: center;
+    color: #D5D5D5;
+    padding-top: 47%;
+    padding-left: 30.3%;
+    font-size: 6rem;
+}
+
+.colorgrey {
+    color: #D5D5D5;
+}
+
+/* Header styles */
+
+.header {
+    padding-top: 0.8%;
+}
+
+.bugzilla {
+    padding-left: 10%;
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    color: #F1F1F1;
+}
+
+.profileicon {
+    color: #F1F1F1;
+    font-size: 3rem;
+}
+
+/* Header styles ends here */
+
+/* for box styles */
+
+.box{
+    padding: 10%;
+    padding-top: 30%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.inputfield {
+    border-radius: 10px;
+  padding: 2%;
+  margin: 2%;
+  margin-left: 0;
+  font-size: 1rem;
+  border-width: calc(var(--border-width) * 1px);
+  border-style: none;
+  border-color: var(--accent);
+  /* text-align: center; */
+  outline: transparent;
+  width: 80%;
+}
+
+.button {
+    margin-top: 2%;
+    width: 80%;
+    background-color: #0F3D3E;
+    color: #F1F1F1;
+}
+
+.button:hover {
+    margin-top: 2%;
+    width: 80%;
+    background-color: #0F3D3E;
+    color: #F1F1F1;
+    opacity: 80%;
+}
+
+.greetings {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.swapbtn {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #0F3D3E;
+    background: none;
+    border: none;
+	padding: 0;
+    cursor: pointer;
+	outline: inherit;
+    margin-left: 10px;
+}
+
+/* box styles end here */
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
