@@ -19,6 +19,10 @@ dark cobalt
 blue2
 #2D8BBA */
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background-color: #0F3D3E;
 }
@@ -51,6 +55,9 @@ body{
 
 .header {
     padding-top: 0.8%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .bugzilla {
@@ -60,10 +67,49 @@ body{
     color: #F1F1F1;
 }
 
+.profilediv{
+    justify-items: right;
+}
+
 .profileicon {
     color: #F1F1F1;
-    font-size: 3rem;
+    font-size: 2rem;
 }
+
+.dropdown-toggle{
+    justify-content: right;
+    padding-left: 65%;
+    padding-top: 2.5%;
+}
+
+.dropdown-toggle::after {
+    display: none !important; 
+  }
+
+.searchbar {
+    padding-top: 1%;
+}
+
+.inputsearch {
+    width: 80%;
+    margin-right: 5px;
+    border-radius: 5px;;
+    height: 2.5rem;
+  }
+
+.inputsearch::placeholder {
+    align-items: center;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.searchbutton {
+    color: #F1F1F1;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
 
 /* Header styles ends here */
 
@@ -129,3 +175,4 @@ footer {
     position: fixed;
     bottom: 0;
 }
+
