@@ -51,13 +51,22 @@ body{
     color: #D5D5D5;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+/* ======================================================================================================================================== */
 /* Header styles */
 
 .header {
     padding-top: 0.8%;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
+    opacity: 10;
+    background-color: #0F3D3E;
 }
 
 .bugzilla {
@@ -67,8 +76,9 @@ body{
     color: #F1F1F1;
 }
 
-.profilediv{
-    justify-items: right;
+.profileicondiv{
+    margin-top: 10px;
+    justify-content: right;
 }
 
 .profileicon {
@@ -95,6 +105,8 @@ body{
     margin-right: 5px;
     border-radius: 5px;;
     height: 2.5rem;
+    border-radius: 10px;
+    border: none;
   }
 
 .inputsearch::placeholder {
@@ -104,6 +116,14 @@ body{
     font-weight: 500;
 }
 
+.inputsearch:focus {
+    outline: none !important;
+    border: none;
+    box-shadow: 0 0 10px #719ECE;
+    font-size: 1rem;
+    /* padding: 10px; */
+  }
+
 .searchbutton {
     color: #F1F1F1;
     font-size: 1.5rem;
@@ -112,7 +132,9 @@ body{
 
 
 /* Header styles ends here */
+/* ======================================================================================================================================== */
 
+/* ======================================================================================================================================== */
 /* for box styles */
 
 .box{
@@ -170,9 +192,92 @@ body{
 }
 
 /* box styles end here */
+/* ======================================================================================================================================== */
 
-footer {
-    position: fixed;
-    bottom: 0;
+/* ======================================================================================================================================== */
+/* profile styles start here */
+
+.profileheading{
+    padding-top: 2rem;
+    padding-left: 2.8rem;
+    color: #F1F1F1;
+    font-size: 2.3rem;
 }
 
+.profilediv{
+    padding: 2% 0 1% 5%;
+    color: #D5D5D5;
+    /* display: flex;
+   flex-direction: column; */
+    /* background-color: #D5D5D5; */
+}
+
+.leftcontent{
+    margin-top: 6px;
+    font-size: 1.2rem;
+}
+
+.inputfield2 {
+    border-radius: 10px;
+  padding: 2%;
+  /* margin: 1%; */
+  /* margin-left: 0; */
+  font-size: 1rem;
+  border-width: calc(var(--border-width) * 1px);
+  border-style: none;
+  border-color: var(--accent);
+  /* text-align: center; */
+  outline: transparent;
+  width: 80%;
+}
+
+.inputfield2:disabled {
+  background-color: #F1F1F1;
+}
+
+.btndiv{
+    padding-left: 8rem;
+    padding-top: 2rem;
+}
+
+.editbtn {
+    align-items:  right;
+    margin: 2% 0% 1% 5%;
+    padding: 6%;
+    color: #0F3D3E;
+    background-color: #F1F1F1;
+    box-shadow: 0 0 10px 7px #072227;
+}
+
+.editbtn:hover {
+    color: #0F3D3E;
+    background-color: #F1F1F1;
+    opacity: 80%;
+    box-shadow: 0 0 10px 7px #072227;
+}
+
+.submitbtndiv{
+    padding-left: 10rem;
+    padding-top: 2rem;
+}
+
+.submitbtn {
+    align-items:  right;
+    margin: 2% 0% 1% 5%;
+    padding: 6%;
+    color: #0F3D3E;
+    background-color: #F1F1F1;
+    box-shadow: 0 0 10px 7px #072227;
+}
+
+.submitbtn:hover {
+    color: #0F3D3E;
+    background-color: #F1F1F1;
+    opacity: 80%;
+    box-shadow: 0 0 10px 7px #072227;
+}
+
+
+
+/* profile styles end here */
+/* ======================================================================================================================================== */

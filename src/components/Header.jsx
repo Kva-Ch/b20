@@ -22,8 +22,8 @@ function Header () {
             <div className = "row">
             <div className ="col-lg-4 col-sm-4 col-md-4"><h5 className = "bugzilla">Bugzilla</h5></div>
             <div className ="col-lg-4 col-sm-4 col-md-4"><SearchBar/></div>
-            <div className ="col-lg-3 col-sm-3 col-md-3"></div>
-                <div className="col-lg-1 col-sm-1 col-md-1 profilediv"> 
+            <div className ="col-lg-2 col-sm-2 col-md-2"></div>
+                <div className="col-lg-2 col-sm-2 col-md-2 profileicondiv"> 
                     <ProfileIcon/>
             </div>   
         </div>
