@@ -4,7 +4,6 @@ import { Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FiSearch} from '@react-icons/all-files/fi/FiSearch'
-
 const SearchBar = ({ history }) => {
   const [keyword, setKeyword] = useState('')
   const submitHandler = (e) => {

@@ -20,8 +20,8 @@ function TaskMeter(props) {
       let barWidth = `${Math.round(percentage * 100)}%`;
     
       return (
-        <div {...meterProps} style={{ width: 200 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div {...meterProps} style={{ width: 400 }}>
+          <div style = {{display: 'flex', justifyContent: 'space-between'}}>
             {label &&
               (
                 <span {...labelProps}>
@@ -35,17 +35,17 @@ function TaskMeter(props) {
                 </span>
               )}
           </div>
-          <div style={{ height: 10, background: 'lightgray' }}>
-            <div style={{ width: barWidth, height: 10, background: 'green' }} />
+          <div style={{ height: '30px', background: 'lightgray' }}>
+            <div style={{ width: barWidth, height: '30px', background: 'green' }} />
           </div>
+          
         </div>
       );
     }
+   
+
     
-    <TaskMeter
-      label="Storage space"
-      value={25}
-    />
+   
 
 
 export default TaskMeter;
