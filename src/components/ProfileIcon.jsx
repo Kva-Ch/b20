@@ -1,10 +1,8 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import React, {useState, useEffect} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Dropdown  from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { NavDropdown } from 'react-bootstrap'
 
 function ProfileIcon(props) {
     return (

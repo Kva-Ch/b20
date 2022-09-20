@@ -2,19 +2,10 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import React, {useState, useEffect} from "react";
 import SearchBar from './SearchBar';
 import ProfileIcon from "./ProfileIcon";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-
-
-// import { library, icon } from '@fortawesome/fontawesome-svg-core'
-//   import { faUser } from '@fortawesome/free-solid-svg-icons'
-// import fontawesome from "@fortawesome/fontawesome"
-
-// fontawesome.library.add(faUser)
-
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faUser);
+// library.add(faUser);
 
 function Header () {
     return (
