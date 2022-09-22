@@ -36,7 +36,7 @@ function TaskMeter(props) {
               )}
           </div>
           <div style={{ height: '30px', background: 'lightgray' }}>
-            <div style={{ width: barWidth, height: '30px', background: 'green' }} />
+            <div style={{ width: barWidth, height: '30px', background: '#000000' }} />
           </div>
           
         </div>

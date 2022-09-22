@@ -31,12 +31,13 @@ html{
 }
 
 body{
-    background-color: #0F3D3E;
-    height: 100%
+    background-color: #FFFFFF;
+    height: 100%;
+    font-family: 'Roboto';
 }
 
 .grey1{
-    background-color: #F1F1F1;
+    background-color: #FFFFFF;
     width: 100%;
     height: 100vh;
 }
@@ -44,12 +45,14 @@ body{
 .loginscreen {
     padding: 0;
     margin: 0;
+    background-color: #f1f1f1;
 }
 
 .logo{
-    font-family: 'Pacifico', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Helvetica';
     justify-content: center;
-    color: #D5D5D5;
+    color: #000000;
     padding-top: 47%;
     padding-left: 30.3%;
     font-size: 6rem;
@@ -65,52 +68,68 @@ footer {
     right: 0;
     /* z-index: 1000;
     opacity: 10; */
-    background-color: #0F3D3E;
+    background-color: #f1f1f1;
 }
 
 /* ======================================================================================================================================== */
 /* Header styles */
 
+.svg-red{
+  fill: #e4002b;
+}
+.svg-white {
+  fill: #fff;
+}
+.fillblack {
+  color: #000000;
+}
+.colorgrey {
+    color: #000000;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #FFFFFF;
+}
 .header {
     padding-top: 0.8%;
     position: sticky;
     top: 0;
     z-index: 1000;
     opacity: 10;
-    background-color: #0F3D3E;
+    background-color: #f1f1f1;
+    /* background-color: #222831; */
+    /* background-color: #06283D; */
+    padding-bottom: 0.5%;
 }
-
-.bugzilla {
+/* .bugzilla {
     padding-left: 10%;
     font-family: 'Pacifico', cursive;
     font-size: 3.5rem;
-    color: #F1F1F1;
-}
-
-.profileicondiv{
-    margin-top: 10px;
-    justify-content: right;
-}
+    color: #000000;
+} */
 
 .profileicon {
-    color: #F1F1F1;
+    margin-top: 10px;
+    justify-content: right;
+    color: #000000;
     font-size: 2rem;
 }
-
+/* .profileicon {
+    
+} */
 .dropdown-toggle{
     justify-content: right;
     padding-left: 65%;
     padding-top: 2.5%;
 }
-
 .dropdown-toggle::after {
-    display: none !important; 
+    display: none !important;
   }
-
 .searchbar {
     padding-top: 1%;
 }
-
 .inputsearch {
     width: 80%;
     margin-right: 5px;
@@ -119,14 +138,12 @@ footer {
     border-radius: 10px;
     border: none;
   }
-
 .inputsearch::placeholder {
     align-items: center;
     padding: 10px;
     font-size: 1rem;
     font-weight: 500;
 }
-
 .inputsearch:focus {
     outline: none !important;
     border: none;
@@ -134,12 +151,12 @@ footer {
     font-size: 1rem;
     /* padding: 10px; */
   }
-
 .searchbutton {
-    color: #F1F1F1;
+    color: #000000;
     font-size: 1.5rem;
     padding-bottom: 1rem;
 }
+
 
 
 /* Header styles ends here */
@@ -172,7 +189,7 @@ footer {
 .button {
     margin-top: 2%;
     width: 80%;
-    background-color: #0F3D3E;
+    background-color: #000000;
     color: #F1F1F1;
 }
 
@@ -193,7 +210,7 @@ footer {
     font-weight: bold;
     font-size: 1.3rem;
     text-decoration: none;
-    color: #0F3D3E;
+    color: #000000;
     background: none;
     border: none;
 	padding: 0;
@@ -285,7 +302,7 @@ footer {
 
     color: #0F3D3E;
     background-color: #F1F1F1;
-    box-shadow: 0 0 10px 7px #072227;
+    box-shadow: 0 0 10px 7px #000000;
 }
 
 .submitbtn:hover {
@@ -439,18 +456,18 @@ footer {
     /* margin: 0% 0% 2% 70%; */
     display: inline-block;
     white-space: nowrap;
-    color: #0F3D3E;
+    color: #000;
     background-color: #F1F1F1;
-    box-shadow: 0 0 10px 7px #072227;
+    box-shadow: 0 0 10px 7px #FFFFFF;
     margin-top: 6vh;
     margin-left: 5vh;
 }
 
 .generalbtn:hover {
-    color: #0F3D3E;
+    color: #000000;
     background-color: #F1F1F1;
     opacity: 80%;
-    box-shadow: 0 0 10px 7px #072227;
+    box-shadow: 0 0 10px 7px #FFFFFF;
 }
 
 .toggle {
