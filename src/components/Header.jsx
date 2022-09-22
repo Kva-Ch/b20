@@ -26,12 +26,11 @@ function Header () {
     return (
         <div className="header">
             <div className = "row">
-            <div className ="col-lg-4 col-sm-4 col-md-4 flogo">{logo()}</div>
-
-            <div className ="col-lg-4 col-sm-4 col-md-4"><SearchBar/></div>
-            {/* <div className ="col-lg-2 col-sm-2 col-md-2"></div> */}
-            <div className="col-lg-2 col-sm-2 col-md-2 " style={{color : '#000000'}}><ProfileIcon/></div>   
-        </div>
+                <div className ="col-lg-4 col-sm-4 col-md-4 flogo">{logo()}</div>
+                <div className ="col-lg-4 col-sm-4 col-md-4"><SearchBar/></div>
+                <div className ="col-lg-2 col-sm-2 col-md-2"></div>
+                <div className="col-lg-2 col-sm-2 col-md-2 " ><ProfileIcon/></div>   
+            </div>
         </div>
     );
 }

@@ -61,16 +61,6 @@ body{
 .colorgrey {
     color: #D5D5D5;
 }
-
-footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    /* z-index: 1000;
-    opacity: 10; */
-    background-color: #f1f1f1;
-}
-
 /* ======================================================================================================================================== */
 /* Header styles */
 
@@ -100,6 +90,7 @@ footer {
     opacity: 10;
     background-color: #f1f1f1;
     padding-bottom: 0.5%;
+    box-shadow: 0px 5px 5px #D5D5D5;
 }
 /* .bugzilla {
     padding-left: 10%;
@@ -107,16 +98,14 @@ footer {
     font-size: 3.5rem;
     color: #000000;
 } */
-
-.profileicon {
-    margin-top: 10px;
+.profileicondiv {
+    margin-top: 2vh;
     justify-content: right;
-    color: #000000;
-    font-size: 2rem;
 }
-/* .profileicon {
-    
-} */
+.profileicon {
+  color: #000000;
+  font-size: 2rem;
+}
 .dropdown-toggle{
     justify-content: right;
     padding-left: 65%;
@@ -182,6 +171,7 @@ footer {
   /* text-align: center; */
   outline: transparent;
   width: 80%;
+  background-color: #f1f1f1;
 }
 
 .button {
