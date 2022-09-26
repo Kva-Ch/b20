@@ -5,6 +5,7 @@ import LoginScreen from "./screens/LoginScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";  
 import DashboardScreen from "./screens/DashboardScreen";  
+import EditPreferencesScreen from "./screens/EditPreferencesScreen";
 
 
 function App(){
@@ -16,6 +17,7 @@ function App(){
         <Route exact="exact" path='/home' element={<HomeScreen />}></Route>
         <Route exact="exact" path='/profile' element={<ProfileScreen />}></Route>
         <Route exact="exact" path='/dashboard' element={<DashboardScreen />}></Route>
+        <Route exact="exact" path='/editpreferences' element={<EditPreferencesScreen />}></Route>
       </Routes>
     </Router>
         </div>

@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from "react";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
-import Dashboard from "../components/Dashboard.jsx";
+import EditPreferences from "../components/EditPreferences.jsx";
 
-function DashboardScreen(props) {
+function EditPreferencesScreen(props) {
     return (<div>
         <Header />
-        <Dashboard />
+        <EditPreferences />
         <Footer />
     </div>);
 }
 
-export default DashboardScreen;
+export default EditPreferencesScreen;

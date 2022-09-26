@@ -23,7 +23,7 @@ function Profile(props) {
             <div className="profilediv">
                 <div className="row">
                     <div className="col-lg-2 col-md-2 col-sm-2 leftcontent">
-                        Hello
+                        Details
                     </div>
                     <div className="col-lg-3 col-md-3 col-sm-3">
                         <input type="text" className="inputfield2" placeholder="username" disabled={disableButton}/><br/>
