@@ -7,6 +7,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import BugInfoScreen from "./screens/BugInfoScreen";
 import Test from "./screens/Test.jsx";
+import PreferencesScreen from "./screens/PreferencesScreen";
 
 function App() {
   return (<div>
@@ -17,6 +18,7 @@ function App() {
         <Route exact="exact" path='/profile' element={<ProfileScreen />}></Route>
         <Route exact="exact" path='/dashboard' element={<DashboardScreen />}></Route>
         <Route exact="exact" path='/bugInfoPage/:bugid' element={<BugInfoScreen/>}></Route>
+        <Route exact="exact" path='/preferences' element={<PreferencesScreen/>}></Route>
         <Route exact="exact" path='/test' element={<Test />}></Route>
       </Routes>
     </Router>

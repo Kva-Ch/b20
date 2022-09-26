@@ -10,13 +10,13 @@ function Profile(props) {
     content.push(
         <div className="row">
                     <div className="col-lg-10 col-md-10 col-sm-10">
-                        <div className="profileheading">Profile</div>   
+                        <div className="heading">Profile</div>
                     </div>
                     <div className="col-lg-2 col-md-2 col-sm-2 btndiv">
                         <button className="btn btn-lg editbtn" onClick={() => setDisableButton(!disableButton)}>Edit Profile</button>
                     </div>
         </div>
-        
+
     )
     for (let index = 0; index < 5; index++) {
         content.push(
@@ -34,7 +34,7 @@ function Profile(props) {
     content.push(
         <div className="row">
             <div className="col-lg-10 col-md-10 col-sm-10">
-                
+
             </div>
             <div className="col-lg-2 col-md-2 col-sm-2 submitbtndiv">
                 <button className="btn btn-lg submitbtn" style={{visibility: disableButton ? 'hidden' : 'visible'}}>Submit</button>

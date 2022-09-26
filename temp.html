@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>Bugzilla Main Page</title>
+
+
+	<link rel="Top" href="https://bugzilla.stg.f5net.com/">
+
+
+
+
+
+	<link href="skins/standard/global.css?1662534434" rel="alternate stylesheet" title="Classic">
+	<link href="skins/standard/global.css?1662534434" rel="stylesheet" type="text/css">
+	<link href="skins/standard/index.css?1662534434" rel="stylesheet" type="text/css">
+	<link href="skins/standard/buglist.css?1662534434" rel="stylesheet" type="text/css">
+
+	<link href="skins/contrib/Dusk/global.css?1662534434" rel="stylesheet" type="text/css" title="Dusk">
+	<link href="skins/contrib/Dusk/buglist.css?1662534434" rel="stylesheet" type="text/css" title="Dusk">
+
+
+
+
+
+
+
+	<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1662534434"></script>
+	<script type="text/javascript" src="js/yui/cookie/cookie-min.js?1662534434"></script>
+	<script type="text/javascript" src="js/global.js?1662534434"></script>
+
+	<script type="text/javascript">
+		<!--
+		YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload",
+                                           YAHOO.util.Event._unload);
+        }
+
+        function unhide_language_selector() {
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            );
+        }
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 135
+            },
+
+            string: {
+
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    //
+		-->
+	</script>
+
+
+
+
+
+	<link rel="search" type="application/opensearchdescription+xml" title="Bugzilla" href="./search_plugin.cgi">
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+
+
+<body onload="" class="bugzilla-stg-f5net-com yui-skin-sam">
+
+
+
+	<div id="header">
+		<div id="banner">
+			<center>
+				<font size="-2">This is an internal resource for F5 Networks, Inc. employees only. Information is
+					proprietary and confidential</font>
+			</center>
+		</div>
+
+		<table border="0" cellspacing="0" cellpadding="0" id="titles">
+			<tr>
+				<td id="title">
+					<p>Bugzilla &ndash; Main Page</p>
+				</td>
+
+
+				<td id="information">
+					<p class="header_addl_info">version 5.0.6</p>
+				</td>
+			</tr>
+		</table>
+
+		<table id="lang_links_container" cellpadding="0" cellspacing="0" class="bz_default_hidden">
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</table>
+		<ul class="links">
+			<li><a href="./">Home</a></li>
+			<li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+			<li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+			<li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+			<li class="form">
+				<span class="separator">| </span>
+				<form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+					<input class="txt" type="text" id="quicksearch_top" name="quicksearch"
+           value="">
+					<input class="btn" type="submit" value="Search"
+           id="find_top"></form>
+					<a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+			<li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+			<li>
+				<span class="separator">| </span>
+				<a href="request.cgi">Requests</a></li>
+
+
+
+			<li id="new_account_container_top">
+				<span class="separator">| </span>
+				<a href="createaccount.cgi">New&nbsp;Account</a>
+			</li>
+
+			<li id="mini_login_container_top">
+				<span class="separator">| </span>
+				<a id="login_link_top" href="index.cgi?GoAheadAndLogIn=1"
+					onclick="return show_mini_login_form('_top')">Log In</a>
+
+
+				<form action="index.cgi" method="POST" class="mini_login bz_default_hidden" id="mini_login_top"
+					onsubmit="return check_mini_login_fields( '_top' );">
+					<input id="Bugzilla_login_top"
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+					<input class="bz_password"
+           id="Bugzilla_password_top"
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+					<input class="bz_password bz_default_hidden bz_mini_login_help" type="text"
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+					<input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+					<script type="text/javascript">
+						mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+					</script>
+					<a href="#" onclick="return hide_mini_login_form('_top')">[x]</a>
+				</form>
+			</li>
+			<li id="forgot_container_top">
+				<span class="separator">| </span>
+				<a id="forgot_link_top" href="index.cgi?GoAheadAndLogIn=1#forgot"
+					onclick="return show_forgot_form('_top')">Forgot Password</a>
+				<form action="token.cgi" method="post" id="forgot_form_top" class="mini_forgot bz_default_hidden">
+					<label for="login_top">Login:</label>
+					<input type="text" name="loginname" size="20" id="login_top">
+					<input id="forgot_button_top" value="Reset Password"
+           type="submit">
+					<input type="hidden" name="a" value="reqpw">
+					<input type="hidden" id="token" name="token" value="1663694926-qAJJoVJj7mZ0UrqntBKfClPKoaCKP3snPNSpjjtOswo">
+					<a href="#" onclick="return hide_forgot_form('_top')">[x]</a>
+				</form>
+			</li>
+		</ul>
+	</div>
+
+	<div id="bugzilla-body">
+
+
+		<script type="text/javascript">
+			<!--
+			function onLoadActions() {
+  quicksearchHelpText('quicksearch_main', 'show');
+  if( window.external.AddSearchProvider ){
+    YAHOO.util.Dom.removeClass('quicksearch_plugin', 'bz_default_hidden');
+  }
+  document.getElementById('quicksearch_top').focus();
+}
+function addSidebar() {
+  var sidebarname=window.location.host;
+  if (!/bug/i.test(sidebarname))
+    sidebarname="Bugzilla "+sidebarname;
+  window.sidebar.addPanel (sidebarname, "https://bugzilla.stg.f5net.com/sidebar.cgi", "");
+}
+var quicksearch_message = "Enter a bug #";
+
+function checkQuicksearch( form ) {
+  if (form.quicksearch.value == '' || form.quicksearch.value == quicksearch_message ||
+	form.quicksearch.value < '0' || form.quicksearch.value > '9999999' ) {
+    alert('Please enter a bug number.');
+    return false;
+  }
+  return true;
+}
+
+function quicksearchHelpText(el_id, action){
+  var el = document.getElementById(el_id);
+  if ( action == "show") {
+    if( el.value == "" ) {
+      el.value = quicksearch_message
+      YAHOO.util.Dom.addClass(el, "quicksearch_help_text");
+    }
+  } else {
+    if( el.value == quicksearch_message ) {
+      el.value = "";
+      YAHOO.util.Dom.removeClass(el, "quicksearch_help_text");
+    }
+  }
+}
+YAHOO.util.Event.onDOMReady(onLoadActions);
+//
+			-->
+		</script>
+
+
+		<div id="page-index">
+			<table>
+				<tr>
+					<td>
+						<h1 id="welcome"> Welcome to Bugzilla</h1>
+						<div class="intro"></div>
+						<div class="bz_common_actions">
+							<ul>
+								<li>
+									<a id="enter_bug"
+										href="enter_bug.cgi?product=BIG-IP"><span>Quick file a BIG-IP Bug</span></a>
+								</li>
+								<li>
+									<a id="enter_bug"
+										href="enter_bug.cgi?product=EM"><span>Quick file an EM Bug</span></a>
+								</li>
+								<li>
+									<a id="enter_bug"
+										href="enter_bug.cgi?classification=BIG-IQ"><span>Quick file a BIG-IQ Bug</span></a>
+								</li>
+								<li>
+									<a id="enter_bug"
+										href="enter_bug.cgi?product=Velocity"><span>Quick file VELOS/F5OSBug</span></a>
+								</li>
+								<li>
+									<a id="enter_bug"
+										href="enter_bug.cgi?classification=Modular"><span>Quick file Modular BIG-IPBug</span></a>
+								</li>
+								<li>
+									<a id="enter_bug"
+										href="enter_bug.cgi?product=Bugzilla"><span>File a Bugzilla change request</span></a>
+								</li>
+								<li>
+									<a id="enter_bug" href="enter_bug.cgi"><span>File a Bug</span></a>
+								</li>
+								<li>
+									<a id="query" href="query.cgi"><span>Search</span></a>
+								</li>
+								<li>
+									<a id="account" href="createaccount.cgi"><span>Open a New Account</span></a>
+								</li>
+							</ul>
+						</div>
+
+						<div id="bugzilla-body">
+							<h2>
+								<center>Some changes have been made to Bugzilla recently</center>
+							</h2>
+							<center>[<a
+									title="(causes this list to no longer be displayed until new enhancements are documented)"
+									href=index.cgi?acknowledge=1>Acknowledge</a>]&nbsp;[<a
+									href=/buglist.cgi?bug_status=Resolved&bug_status=Test&bug_status=Verified&classification=General&columnlist=alias%2Cbug_status%2Cshort_short_desc%2Ccf_fixeddate%2Ccf_ki_external_title%2Ccf_ki_fixedtext&f1=cf_ki_external_title&list_id=2753091&o1=notregexp&product=Bugzilla&query_format=advanced&v1=%5E%24&order=cf_fixeddate%20DESC%2Calias%20DESC%2Cproduct%2Cbug_status%2Cpriority%2Cassigned_to%2Cbug_id&query_based_on=>See
+									all changes</a>] </center> <table class="bz_buglist" border=1 cellpadding=1
+									cellspacing=0>
+									<tbody>
+										<tr class="bz_buglist_header bz_first_buglist_header">
+											<th>ID</th>
+											<th>Change Summary</th>
+											<th>Change Description</th>
+											<th>When</th>
+										</tr>
+										<tr class="bz_bugitem bz_row_odd">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=1020709>1020709</a>
+											</td>
+											<td class="bz_externaltext_column">Governance Approved flags for both EHF
+												and SCI</td>
+											<td class="bz_fixtext_column bz_comment_text">'Governance_Approved' flag is
+												replaced with two new flags, i.e. 'Governance_Approved_EHF' and
+												'Governance_Approved_SCI'. When one among them is set to '?', the other
+												flag is also set to '?'</td>
+											<td nowrap class="bz_changedate_column">5-24-2021</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_even">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=1015489>1015489</a>
+											</td>
+											<td class="bz_externaltext_column">Adding &quot;Quick file Modular BIG-IP
+												bug&quot; and &quot;Quick file VELOS/F5OS bug&quot; to home page</td>
+											<td class="bz_fixtext_column bz_comment_text">On the homepage users can now
+												quick file Modular BIG-IP bug and VELOS/F5OS bug</td>
+											<td nowrap class="bz_changedate_column">5-9-2021</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_odd">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=993977>993977</a></td>
+											<td class="bz_externaltext_column">PM/PO Owner field is now available in
+												bulk edit fields</td>
+											<td class="bz_fixtext_column bz_comment_text">Users can now change the PM/PO
+												owner field of several bugs at once, by using the feature 'Change
+												Several Bugs at Once'.</td>
+											<td nowrap class="bz_changedate_column">2-15-2021</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_even">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=993973>993973</a></td>
+											<td class="bz_externaltext_column">Component page now lists PM/PO Owner</td>
+											<td class="bz_fixtext_column bz_comment_text">There is a lot of confusion
+												now a days on who is PM/PO owner for different components. Currently
+												this data is not visible to everybody. Now this field visible to
+												everyone, so that it will be easy for bugzilla users to trace the PM/PO
+												owner for specific component.</td>
+											<td nowrap class="bz_changedate_column">2-15-2021</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_odd">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=975513>975513</a></td>
+											<td class="bz_externaltext_column">Jira Issue Id is now editable via UI.
+											</td>
+											<td class="bz_fixtext_column bz_comment_text">Previously bugspray tool was
+												used to update JIRA Issue Id field in bugzilla for bugs which are
+												tracked in JIRA, now the JIRA Issue Id is made readable and writable so
+												that one can easily update it using the UI itself.</td>
+											<td nowrap class="bz_changedate_column">12-20-2020</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_even">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=858397>858397</a></td>
+											<td class="bz_externaltext_column">Add who the bug was assigned to into
+												history when it's created</td>
+											<td class="bz_fixtext_column bz_comment_text">For reporting purposes, when a
+												new bug is filed, the assignee information (Assigned To, QA Contact,
+												PO/PM Owner) are added to the history.</td>
+											<td nowrap class="bz_changedate_column">12-7-2019</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_odd">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=858393>858393</a></td>
+											<td class="bz_externaltext_column">Assigned date field not always set</td>
+											<td class="bz_fixtext_column bz_comment_text">Fixed some logic errors to
+												make sure that it always gets set when the assignee changes, this
+												includes when the bug is first opened (at which point it will be the
+												same as the bugs creation time since it's assigned to someone then)</td>
+											<td nowrap class="bz_changedate_column">12-7-2019</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_even">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=858389>858389</a></td>
+											<td class="bz_externaltext_column">Update PM Owner field label</td>
+											<td class="bz_fixtext_column bz_comment_text">PM Owner has been renamed to
+												PO/PM Owner, note that all existing search queries will still work, this
+												is simply updating the label, not the underlying field/data.</td>
+											<td nowrap class="bz_changedate_column">12-7-2019</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_odd">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=726354>726354</a></td>
+											<td class="bz_externaltext_column">PM Owner is now searchable and shows up
+												by email address in search results</td>
+											<td class="bz_fixtext_column bz_comment_text">Now when performing a search
+												you can go to &quot;Search By People&quot; and search for the PM Owner.
+												Additionally if you include the PM Owner column in your results it will
+												show the users email address instead of their user id number like it
+												previously did.</td>
+											<td nowrap class="bz_changedate_column">6-30-2018</td>
+										</tr>
+										<tr class="bz_bugitem bz_row_even">
+											<td class="bz_bug_id_column"><a href=show_bug.cgi?id=706216>706216</a></td>
+											<td class="bz_externaltext_column">New PM Owner field for improvements and
+												requirements</td>
+											<td class="bz_fixtext_column bz_comment_text">There is now a PM Owner field
+												which will be used for requirements and improvements that are tracked in
+												bugzilla. This is a required field for improvements or requirements.
+												Also fixed the alignment of the quick file buttons on the home page.
+											</td>
+											<td nowrap class="bz_changedate_column">2-10-2018</td>
+										</tr>
+									</tbody>
+			</table>
+		</div>
+		<br>
+
+		<form id="quicksearchForm" name="quicksearchForm" action="buglist.cgi"
+			onsubmit="return checkQuicksearch(this);">
+			<div>
+				<ul class="additional_links">
+					<li><a href="http://go/bzhelp">F5 Bugzilla Help</a></li>
+					<li> | <a
+							href="buglist.cgi?cmdtype=dorem&remaction=run&namedcmd=Bugzilla%20Changes%20Last%2030%20Days&sharer_id=1">Recent
+							Bugzilla Changes</a></li>
+					<li> | <a href="bzlinks.cgi?USER=">Official Bugzilla Links</a></li>
+					<li>
+						|
+						<a href="https://bugzilla.readthedocs.org/en/5.0/using.html">Bugzilla User's Guide</a>
+					</li>
+					<li>
+						|
+						<a href="page.cgi?id=release-notes.html">Release Notes</a>
+					</li>
+				</ul>
+			</div>
+		</form>
+		<div class="outro"></div>
+		</td>
+		</tr>
+		</table>
+	</div>
+	</div>
+
+
+
+	<div id="footer">
+		<div class="intro"></div>
+
+
+
+
+		<ul id="useful-links">
+			<li id="links-actions">
+				<ul class="links">
+					<li><a href="./">Home</a></li>
+					<li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+					<li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+					<li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+					<li class="form">
+						<span class="separator">| </span>
+						<form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+							<input class="txt" type="text" id="quicksearch_bottom" name="quicksearch"
+           value="">
+							<input class="btn" type="submit" value="Search"
+           id="find_bottom"></form>
+							<a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+					<li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+					<li>
+						<span class="separator">| </span>
+						<a href="request.cgi">Requests</a></li>
+
+
+
+					<li id="new_account_container_bottom">
+						<span class="separator">| </span>
+						<a href="createaccount.cgi">New&nbsp;Account</a>
+					</li>
+
+					<li id="mini_login_container_bottom">
+						<span class="separator">| </span>
+						<a id="login_link_bottom" href="index.cgi?GoAheadAndLogIn=1"
+							onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+
+						<form action="index.cgi" method="POST" class="mini_login bz_default_hidden"
+							id="mini_login_bottom" onsubmit="return check_mini_login_fields( '_bottom' );">
+							<input id="Bugzilla_login_bottom"
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+							<input class="bz_password"
+           id="Bugzilla_password_bottom"
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+							<input class="bz_password bz_default_hidden bz_mini_login_help" type="text"
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+							<input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+							<script type="text/javascript">
+								mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+							</script>
+							<a href="#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+						</form>
+					</li>
+					<li id="forgot_container_bottom">
+						<span class="separator">| </span>
+						<a id="forgot_link_bottom" href="index.cgi?GoAheadAndLogIn=1#forgot"
+							onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+						<form action="token.cgi" method="post" id="forgot_form_bottom"
+							class="mini_forgot bz_default_hidden">
+							<label for="login_bottom">Login:</label>
+							<input type="text" name="loginname" size="20" id="login_bottom">
+							<input id="forgot_button_bottom" value="Reset Password"
+           type="submit">
+							<input type="hidden" name="a" value="reqpw">
+							<input type="hidden" id="token" name="token" value="1663694926-qAJJoVJj7mZ0UrqntBKfClPKoaCKP3snPNSpjjtOswo">
+							<a href="#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+						</form>
+					</li>
+				</ul>
+			</li>
+
+
+
+
+
+
+
+		</ul>
+
+		<div class="outro"></div>
+	</div>
+
+</body>
+
+</html>
