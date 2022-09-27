@@ -486,9 +486,26 @@ footer {
 .heading {
   font-family: 'Courier New', Courier, monospace;
   font-size: xx-large;
+  margin-top: 2vh;
 }
 
 input.form-check-input {
     transform : scale(1.3);
     margin-top: 1.5vh;
+}
+
+.submitpreferencesbtn {
+    color: #000000;
+    background-color: #F1F1F1;
+    box-shadow: 0 0 10px 7px #FFFFFF;
+    white-space: nowrap;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.submitpreferencesbtn:hover {
+  color: #000000;
+  background-color: #F1F1F1;
+  opacity: 80%;
+  box-shadow: 0 0 10px 7px #FFFFFF;
 }
