@@ -20,16 +20,21 @@ blue2
 #2D8BBA */
 html {
   overflow-x: hidden;
+   height: 100%;
 }
 
 body {
   /* background-color: #0F3D3E; */
   /* background-color: #222831; */
   /* background-color: #D5D5D5; */
+  background-color: #FFFFFF;
+   height: 100%;
+   font-family: 'Roboto';
 }
 
 .grey1 {
-  background-color: #F1F1F1;
+  /* background-color: #F1F1F1; */
+  background-color: #FFFFFF;
   width: 100%;
   height: 100vh;
 }
@@ -37,15 +42,22 @@ body {
 .loginscreen {
   padding: 0;
   margin: 0;
+  background-color: #f1f1f1;
 }
 
 .logo {
-  font-family: 'Pacifico', cursive;
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Helvetica', 'san-serif';
   justify-content: center;
-  color: #D5D5D5;
+  /* color: #D5D5D5; */
+  color: #000000;
   padding-top: 47%;
   padding-left: 30.3%;
   font-size: 6rem;
+}
+
+.colorgrey {
+    color: #D5D5D5;
 }
 
 .svg-red {
@@ -58,10 +70,6 @@ body {
 
 .fillblack {
   color: #000000;
-}
-
-.colorgrey {
-  color: #D5D5D5;
 }
 
 footer {
@@ -170,19 +178,23 @@ footer {
   /* text-align: center; */
   outline: transparent;
   width: 80%;
+  color: #000000;
+  background-color: #f1f1f1;
 }
 
 .button {
   margin-top: 2%;
   width: 80%;
-  background-color: #0F3D3E;
+  /* background-color: #0F3D3E; */
+  background-color: #000000;
   color: #F1F1F1;
 }
 
 .button:hover {
   margin-top: 2%;
   width: 80%;
-  background-color: #0F3D3E;
+  /* background-color: #0F3D3E; */
+  background-color: #000000;
   color: #F1F1F1;
   opacity: 80%;
 }
@@ -196,7 +208,8 @@ footer {
   font-weight: bold;
   font-size: 1.3rem;
   text-decoration: none;
-  color: #0F3D3E;
+  /* color: #0F3D3E; */
+  color: #000000;
   background: none;
   border: none;
   padding: 0;
@@ -362,7 +375,7 @@ footer {
 }
 
 .boxes {
-  padding-left: 0px;
+  padding-left: 0.65%;
 }
 
 .collapsebox {
@@ -450,6 +463,10 @@ footer {
   border: solid 1px #082032;
 }
 
+.emptyDiv {
+  margin-top: 100px;
+}
+
 /* home page styles end here */
 /* ======================================================================================================================================== */
 /* bug info page styles start here */
@@ -469,3 +486,89 @@ footer {
 
 /* bug info page styles end here */
 /* ======================================================================================================================================== */
+
+* dashboard styles start here */
+/* ======================================================================================================================================== */
+
+/* taskmeter div inline styles are considered */
+
+.taskmeterdiv {
+    font-style: italic;
+    margin-top: 5vh;
+    margin-left: 5vh;
+    font-size: 21, ;
+    text-align: 'center';
+    color: 'white';
+}
+
+.graphdiv {
+    margin-top: 6vh;
+    margin-left: 2vh;
+
+}
+.timeselect {
+    display: inline-block;
+    justify-content: center;
+    margin-top: 12vh;
+    margin-left: 5vh;
+}
+.dropdown-toggle {
+    display: inline-block;
+    padding-left: 1rem;
+}
+.generalbtn {
+    align-items:  right;
+    /* margin: 0% 0% 2% 70%; */
+    display: inline-block;
+    white-space: nowrap;
+    color: #000000;
+    background-color: #F1F1F1;
+    box-shadow: 0 0 10px 7px #FFFFFF;
+    margin-top: 6vh;
+    margin-left: 5vh;
+}
+
+.generalbtn:hover {
+    color: #000000;
+    background-color: #F1F1F1;
+    opacity: 80%;
+    box-shadow: 0 0 10px 7px #FFFFFF;
+}
+
+.toggle {
+    background-color: #F1F1F1;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Edit preference page styles */
+.spacing {
+  margin-left: 1vh;
+}
+
+.form-check-label {
+  font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+input.form-check-input {
+    transform : scale(1.3);
+    margin-top: 1.5vh;
+}
+
+.submitpreferencesbtn {
+    color: #000000;
+    background-color: #F1F1F1;
+    box-shadow: 0 0 10px 7px #FFFFFF;
+    white-space: nowrap;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.submitpreferencesbtn:hover {
+  color: #000000;
+  background-color: #F1F1F1;
+  opacity: 80%;
+  box-shadow: 0 0 10px 7px #FFFFFF;
+}
