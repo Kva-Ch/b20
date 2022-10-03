@@ -16,21 +16,39 @@ function Home(props) {
 
 }, []);
 
+function sortById(e) {
+  console.log("Clicked");
+}
+
+function sortByStatus(e) {
+  console.log("Clicked");
+}
+
+function sortByPriority(e) {
+  console.log("Clicked");
+}
+
+function sortByDOC(e) {
+  console.log("Clicked");
+}
+
+
+
 content.push(<div className="row titlebar">
   <div className="col-lg-1 col-md-1 col-sm-1"></div>
   <div className="tabletitles">
     <div className="row">
       <div className="col-lg-3 col-md-3 col-sm-3">
-        <h5 className="info bugidTitle">Bug Id</h5>
+        <h5 className="info bugidTitle"><a className="titleSort" onClick={sortById}>Bug Id</a></h5>
       </div>
       <div className="col-lg-3 col-md-3 col-sm-3">
-        <h5 className="info statusTitle">Status</h5>
+        <h5 className="info statusTitle"><a className="titleSort" onClick={sortByStatus}>Status</a></h5>
       </div>
       <div className="col-lg-3 col-md-3 col-sm-3">
-        <h5 className="info priorityTitle">Priority</h5>
+        <h5 className="info priorityTitle"><a className="titleSort" onClick={sortByPriority}>Priority</a></h5>
       </div>
       <div className="col-lg-3 col-md-3 col-sm-3">
-        <h5 className="info docTitle">Date of Creation</h5>
+        <h5 className="info docTitle"><a className="titleSort" onClick={sortByDOC}>Date Of Creation</a></h5>
       </div>
     </div>
   </div>
@@ -48,22 +66,22 @@ content.push(<div className="row titlebar">
           <div className="homealigndiv"></div>
         </div>)
       } else {
-        content.push(<div className="row">
+        content.push(<div className="row boxes">
           <div className="col-lg-1 col-md-1 col-sm-1"></div>
           <div className="collapsebox">
             <a className="removestyle" data-bs-toggle="collapse" href={"#collapseExample" + index} role="button" aria-expanded="false" aria-controls="collapseExample">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-sm-3">
-                  <h5 className="info">Bug Id</h5>
+                  <h5 className="info">{index+1000}</h5>
                 </div>
                 <div className="col-lg-3 col-md-3 col-sm-3">
-                  <h5 className="info">Status</h5>
+                  <h5 className="info">Open</h5>
                 </div>
                 <div className="col-lg-3 col-md-3 col-sm-3">
-                  <h5 className="info">Priority</h5>
+                  <h5 className="info">Medium</h5>
                 </div>
                 <div className="col-lg-2 col-md-2 col-sm-2">
-                  <h5 className="info">Date of Creation</h5>
+                  <h5 className="info">{index}-9-2022</h5>
                 </div>
                 <div className="col-lg-1 col-md-1 col-sm-1">
                   <button id={temp} className="arrow" style={{
@@ -86,8 +104,8 @@ content.push(<div className="row titlebar">
               </div>
 
             </a>
-            <div class="collapse" id={"collapseExample" + index}>
-              <div class="card card-body">
+            <div className="collapse" id={"collapseExample" + index}>
+              <div className="card card-body">
                 <p className="bugdescription">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel molestie lectus, sed scelerisque metus. Pellentesque tincidunt odio eu enim dictum, non pellentesque nibh fringilla. Aliquam posuere eget lacus id porta. Nullam vel enim id metus efficitur tristique eu at leo. Nam nibh ex, accumsan nec nulla nec, iaculis pretium elit. Integer hendrerit est turpis, eu sollicitudin quam molestie sed. Donec posuere justo metus, nec commodo erat suscipit id. Praesent mattis turpis consectetur nulla consectetur maximus. Suspendisse quis purus at mauris mattis maximus. Sed euismod massa scelerisque ligula dignissim, at semper tortor fringilla. Sed ornare dui vitae consequat eleifend. Vivamus viverra ante molestie, volutpat purus in, volutpat mi. Vestibulum laoreet gravida ipsum, eu laoreet ligula sagittis ac. Integer placerat ipsum ipsum, eget pellentesque sem malesuada at. Phasellus vel scelerisque elit.
                 </p>
@@ -160,7 +178,7 @@ content.push(<div className="row titlebar">
 
   return (<div className="homecomponent">
     <div>{content}</div>
-    <div class="p-3">
+    <div className="p-3">
       {paginate}
     </div>
   </div>);

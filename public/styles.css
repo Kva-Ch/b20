@@ -185,7 +185,7 @@ footer {
 .button:hover {
     margin-top: 2%;
     width: 80%;
-    background-color: #0F3D3E;
+    background-color: #000000;
     color: #F1F1F1;
     opacity: 80%;
 }
@@ -250,6 +250,21 @@ footer {
   outline: transparent;
   width: 80%;
   color: #000000;
+}
+
+.inputfield3 {
+  border-radius: 10px;
+  padding: 2%;
+  /* margin: 1%; */
+  /* margin-left: 0; */
+  font-size: 1rem;
+  border-width: calc(var(--border-width) * 1px);
+  border-style: none;
+  border-color: var(--accent);
+  /* text-align: center; */
+  outline: transparent;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .inputfield2:disabled {
@@ -336,7 +351,20 @@ footer {
   margin-top: 1rem;
 }
 
-.titlebar{
+.titleSort {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.titleSort:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  opacity: 80%;
+}
+
+.titlebar {
   z-index: 1000;
 }
 
@@ -345,10 +373,10 @@ footer {
   position: fixed;
   left: 7.8%;
   top: 104px;
-  color: #D5D5D5;
+  color: #DDDDDD;
   margin-top: 0rem;
   margin-left: 4.9rem;
-  max-width: 71.2%;
+  max-width: 70.6%;
   margin-bottom: 10rem;
   padding: 1.3%;
   padding-bottom: 0.5%;
@@ -356,8 +384,12 @@ footer {
   /* height: 100px; */
 }
 
-.collapsebox{
-  background-color: #D5D5D5;
+.boxes {
+  padding-left: 0px;
+}
+
+.collapsebox {
+  background-color: #F7F7F7;
   color: #000000;
   margin-top: 0.5rem;
   margin-left: 5rem;
@@ -377,18 +409,18 @@ footer {
   font-weight: 300;
 }
 
-.arrow{
+.arrow {
   margin-left: 90%;
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.moreBugInfo{
+.moreBugInfo {
   text-decoration: none;
   color: #0F3D3E;
   font-weight: bold;
@@ -396,15 +428,15 @@ footer {
   right: 10px;
 }
 
-.moreBugInfo:hover{
+.moreBugInfo:hover {
   text-decoration: none;
 }
 
-.bugidTitle{
+.bugidTitle {
   margin-left: 0.1rem;
 }
 
-.statusTitle{
+.statusTitle {
   margin-left: 0.4rem;
 }
 
@@ -415,11 +447,37 @@ footer {
 .docTitle {
   margin-left: 0rem;
 }
+
+.pagination>li>a {
+  background-color: white;
+  color: #082032;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination>.active>a {
+  color: white;
+  background-color: #082032 !Important;
+  border: solid 1px #082032 !Important;
+}
+
+.pagination>.active>a:hover {
+  background-color: #082032 !Important;
+  border: solid 1px #082032;
+}
+
 /* home page styles end here */
 /* ======================================================================================================================================== */
 
 
-* dashboard styles start here */
+/* dashboard styles start here */
 /* ======================================================================================================================================== */
 
 /* taskmeter div inline styles are considered */
@@ -473,7 +531,13 @@ footer {
     height: 100vh;
 }
 
+/* dashboard styles end here */
+/* ======================================================================================================================================== */
+
+
 /* Edit preference page styles */ 
+/* ======================================================================================================================================== */
+
 .spacing {
   margin-left: 1vh;
 }
@@ -510,3 +574,24 @@ input.form-check-input {
   opacity: 80%;
   box-shadow: 0 0 10px 7px #FFFFFF;
 }
+
+
+/* Bug Info page styles start here */
+/* ======================================================================================================================================== */
+
+
+.infoContainer {
+  margin-left: 1.3rem;
+  margin-top: 1rem;
+  color: #000000;
+}
+
+.infodiv {
+  background-color: #F7F7F7;
+  padding: 5%;
+  color: #5a5a5a;
+  border-radius: 10px;
+}
+
+/* Bug Info page styles end here */
+/* ======================================================================================================================================== */
