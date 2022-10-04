@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import WeekBarGraph from './WeekBarGraph';
 import MonthBarGraph  from "./MonthBarGraph";
-import ThirtyOneDaysMonthBarGraph from "./ThirtyOneDaysMonthBarGraph";
 import TaskMeter from './TaskMeter';
 import TimeSelect from './TimeSelect';
 import YearLineChart from "./YearLineChart";
 import YearBarGraph from "./YearBarGraph";
-
+import FilterByMonthApi from "../../controllers/FilterByMonthApi";
+import FilterByDayApi from "../../controllers/FilterByDayApi";
+import FilterAcrossYearsApi from "../../controllers/FilterAcrossYearsApi";
+import FilterCurrentWeekApi from "../../controllers/FilterCurrentWeekApi";
 
 
 function Dashbaord(props) {
@@ -14,8 +16,28 @@ function Dashbaord(props) {
     const [status1, setStatus1] = useState(0);
     const [status2, setStatus2] = useState(0);
 
+    const [acrossYearsInfo, setAcrossYearsInfo] = useState([]);
+    const[currentWeekInfo, setCurrentWeekInfo] = useState([]);
+
+    const [load, setLoad] = useState(0);
+
+    async function callAcrossYears(fromYear, toYear) {
+        fromYear = 2000;
+        toYear = 2022;
+        let temp = await FilterAcrossYearsApi(fromYear, toYear);
+        console.log("temp is:", temp);
+        setAcrossYearsInfo(temp);
+        setLoad(1);
+    }
+
+    async function callCurrentWeek() {
+        let temp = await FilterCurrentWeekApi();
+        console.log(temp);
+        setCurrentWeekInfo(temp);
+        setLoad(1);
+    }
+
     // status 1 : 0 -> week 1 -> year 2 -> month 3 -> date 4-> line chart
-    console.log("here");
     function toggleButtons(status1, status2) {
 
         if(status1==0) {
@@ -48,6 +70,8 @@ function Dashbaord(props) {
                 case 12: return <div className="col-lg-8 col-md-7 col-sm-8"><div className="graphdiv"><MonthBarGraph numberOfDays = "31" /></div></div>
             }
         }
+
+        /* across years */
         else if (status1==4) {
             return <div className="col-lg-8 col-md-7 col-sm-8"><div className="graphdiv"><YearLineChart /></div></div>
         }
@@ -67,8 +91,6 @@ function Dashbaord(props) {
             <div className="row">
 
                 {toggleButtons(status1, status2)}
-                {/* { status==0 ? <div className="col-lg-8 col-md-7 col-sm-8"><div className="bargraphdiv"><WeekBarGraph /></div></div>
-                :  <div className="col-lg-8 col-md-7 col-sm-8"><div className="bargraphdiv"><YearLineChart /></div></div> } */}
 
                 <div className="col-lg-4 col-md-4 col-sm-4"><div className="timeselect"><TimeSelect setStatus1={swap} status1={status1} setStatus2={setStatus2} status2= {status2}/></div></div>
 
@@ -82,7 +104,7 @@ function Dashbaord(props) {
 
                 <div className="col-lg-1 col-md-1 col-sm-1"><button className="btn btn-sm generalbtn btn-secondary" onClick={() => setStatus1(0)} >
                     Current Week</button></div>
-                <div className="col-lg-1 col-md-1 col-sm-1"><button className="btn btn-sm generalbtn btn-secondary" onClick={() => setStatus1(4)} >
+                <div className="col-lg-1 col-md-1 col-sm-1"><button className="btn btn-sm generalbtn btn-secondary" onClick={() => {setStatus1(4); callAcrossYears(2000,2022);}} >
                     Across years</button></div>
 
 
