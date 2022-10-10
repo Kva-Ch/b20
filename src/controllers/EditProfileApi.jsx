@@ -8,7 +8,7 @@ async function editProfileApi(body) {
   console.log(body);
 
   var config = {
-    method: 'put',
+    method: 'POST',
     url: url,
     data: body
   };

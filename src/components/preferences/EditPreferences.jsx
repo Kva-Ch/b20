@@ -205,12 +205,12 @@ class EditPreferences extends Component {
     // }
     console.log("CheckArray:", checkArray);
     console.log("SubmittedPreferences", submittedPreferences);
-    let temp = await callEditUserPreferences(this.state);
+    let temp = await callEditUserPreferences(submittedPreferences);
     console.log(temp);
     if (temp === 200) {
-      // window.location.href = '/preferences';
+      window.location.href = '/preferences';
     } else {
-      // window.location.href = '/home';
+      window.location.href = '/home';
     }
     // alert('Your preferences have been saved successfully!');
     // window.location.href = '/home';

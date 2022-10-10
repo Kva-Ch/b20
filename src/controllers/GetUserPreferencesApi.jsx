@@ -28,8 +28,8 @@ async function GetUserPreferencesApi() {
     .then((response) => response.json())
     .then((data) => {
       preferences = data;
-      console.log("Get preferences");
-      console.log(data);
+      // console.log("Get preferences");
+      // console.log(data);
     })
     .catch((error) => {
       console.error('Error:', error);

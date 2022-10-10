@@ -28,7 +28,7 @@ function YearLineChart(props) {
   const labels = Array.from({
     length: numberOfYears
   }, (_, i) => i + 1996)
-  console.log("data:",props.acrossYearsInfo);
+  console.log("data:", props.acrossYearsInfo);
   const data = {
     labels: labels,
     datasets: [
