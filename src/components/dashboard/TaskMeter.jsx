@@ -14,11 +14,11 @@ function TaskMeter(props) {
         meterProps,
         labelProps
       } = useMeter(props);
-
+    
       // Calculate the width of the progress bar as a percentage
       let percentage = (value - minValue) / (maxValue - minValue);
       let barWidth = `${Math.round(percentage * 100)}%`;
-
+    
       return (
         <div {...meterProps} style={{ width: 400 }}>
           <div style = {{display: 'flex', justifyContent: 'space-between'}}>
@@ -38,14 +38,14 @@ function TaskMeter(props) {
           <div style={{ height: '30px', background: 'lightgray' }}>
             <div style={{ width: barWidth, height: '30px', background: '#000000' }} />
           </div>
-
+          
         </div>
       );
     }
+   
 
-
-
-
+    
+   
 
 
 export default TaskMeter;

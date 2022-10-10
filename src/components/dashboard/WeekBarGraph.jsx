@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+import Chart from 'chart.js/auto';
+// import {
+//   Chart as ChartJS,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+//
+// } from 'chart.js';
 
-} from 'chart.js';
+// import { Chart, CategoryScale, ChartConfiguration, LineController, LineElement, PointElement, LinearScale, Title, Tooltip, Legend} from 'chart.js'
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-
-);
+// Chart.register(
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+//
+// );
 
 function WeekBarGraph(props) {
     const data = {

@@ -4,7 +4,8 @@ import axios from 'axios';
 /* across several years : line chart */
 async function FilterAcrossYearsApi(fromYear, toYear) {
 
-    var url = Constants.base_url + "/auth/filterByYear/?from=" + 2000 + "&to=" + 2004 + "&userId=" + 3340;
+    const userid = localStorage.getItem('uid');
+    var url = Constants.base_url + "/auth/filterByYear/?from=" + fromYear + "&to=" + toYear + "&userId=" + userid;
 
     var config = {
       method: 'get',

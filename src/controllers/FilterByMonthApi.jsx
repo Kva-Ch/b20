@@ -4,7 +4,9 @@ import axios from 'axios';
 /* for a specific year */
 async function FilterByMonthApi(year) {
 
-    var url = Constants.base_url + "/auth/filterByMonth/?year=" + 1999 + "&userId=" + 1670;
+    const userid = localStorage.getItem('uid');
+    console.log(year, userid);
+    var url = Constants.base_url + "/auth/filterByMonth/?year=" + year + "&userId=" + userid;
 
     var config = {
       method: 'get',

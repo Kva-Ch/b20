@@ -5,27 +5,27 @@ import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-r
 
 class EditPreferences extends Component {
 state = {
-    isId: false,
-    isType: false,
-    isStatus: false,
-    isSummary: false,
-    isProduct: false,
-    isSeverity: false,
-    isPriority: false,
-    isLastChangeTime: false,
-    isAssignedToDetails: false,
-    isCreatorDetails: false,
-    isCreationTime: false,
-    isQaContactDetails: false,
+    isType: false,
+    isStatus: false,
+    isPriority: false,
+    isSeverity: false,
+    isSummary: false,
+    isProduct: false,
+    isPlatform: false,
+    isResolution: false,
+    isTarget_milestone: false,
+    isClassification: false,
+    isIs_confirmed: false,
+    isIs_open: false,
+    isQa_contact: false,
+    isCreator_detail: false,
+    isAssigned_to_detail: false,
+    isLast_change_time: false,
+    isCreation_time: false,
+
 
     submitState: false,
 };
-
-onChangeID = () => {
-    this.setState(initialState => ({
-      isId: !initialState.isId,
-    }));
-}
 
 onChangeType = () => {
     this.setState(initialState => ({
@@ -36,6 +36,18 @@ onChangeType = () => {
 onChangeStatus = () => {
     this.setState(initialState => ({
       isStatus: !initialState.isStatus,
+    }));
+}
+
+onChangePriority = () => {
+    this.setState(initialState => ({
+      isPriority: !initialState.isPriority,
+    }));
+}
+
+onChangeSeverity = () => {
+    this.setState(initialState => ({
+      isSeverity: !initialState.isSeverity,
     }));
 }
 
@@ -51,51 +63,69 @@ onChangeProduct = () => {
     }));
 }
 
-onChangeSeverity = () => {
+onChangePlatform = () => {
     this.setState(initialState => ({
-      isSeverity: !initialState.isSeverity,
+      isPlatform: !initialState.isPlatform,
     }));
 }
 
-onChangePriority = () => {
+onChangeResolution = () => {
     this.setState(initialState => ({
-      isPriority: !initialState.isPriority,
+      isResolution: !initialState.isResolution,
     }));
 }
 
-onChangeLastChangeTime = () => {
+onChangeTarget_milestone = () => {
     this.setState(initialState => ({
-      isLastChangeTime: !initialState.isLastChangeTime,
+      isTarget_milestone: !initialState.isTarget_milestone,
     }));
 }
 
-onChangeAssignedToDetails = () => {
+onChangeClassification = () => {
     this.setState(initialState => ({
-      isAssignedToDetails: !initialState.isAssignedToDetails,
+      isClassification: !initialState.isClassification,
     }));
 }
 
-onChangeAssignedToDetails = () => {
+onChangeIs_confirmed = () => {
     this.setState(initialState => ({
-      isAssignedToDetails: !initialState.isAssignedToDetails,
+      isIs_confirmed: !initialState.isIs_confirmed,
     }));
 }
 
-onChangeCreatorDetails = () => {
+onChangeIs_open = () => {
     this.setState(initialState => ({
-      isCreatorDetails: !initialState.isCreatorDetails,
+      isIs_open: !initialState.isIs_open,
     }));
 }
 
-onChangeCreationTime = () => {
+onChangeQa_contact = () => {
     this.setState(initialState => ({
-      isCreationTime: !initialState.isCreationTime,
+      isQa_contact: !initialState.isQa_contact,
     }));
 }
 
-onChangeQaContactDetails = () => {
+onChangeCreator_detail = () => {
     this.setState(initialState => ({
-      isQaContactDetails: !initialState.isQaContactDetails,
+      isCreator_detail: !initialState.isCreator_detail,
+    }));
+}
+
+onChangeAssigned_to_detail = () => {
+    this.setState(initialState => ({
+      isAssigned_to_detail: !initialState.isAssigned_to_detail,
+    }));
+}
+
+onChangeLast_change_time = () => {
+    this.setState(initialState => ({
+      isLast_change_time: !initialState.isLast_change_time,
+    }));
+}
+
+onChangeCreation_time = () => {
+    this.setState(initialState => ({
+      isCreation_time: !initialState.isCreation_time,
     }));
 }
 
@@ -140,8 +170,8 @@ onSubmit = (e) => {
     let checkData = {
       checkbox: checkArray.toString()
     };
-
-    console.log(this.state);
+    console.log('submitted');
+    console.log(checkArray);
   }
 
 
@@ -149,35 +179,32 @@ onSubmit = (e) => {
 render() {
 
     return (
-        <div>
+        <div className="preferencesbox">
             <div className="row">
-                <div className="heading"><b>EDIT YOUR PREFERENCES FOR BUG INFO FIELDS</b></div>
-                <br/>
+                <div className="heading2"><b>EDIT YOUR PREFERENCES FOR BUG INFO FIELDS</b></div>
                 <br/>
                 <br/>
 
-                <br/>
-                <br/>
             </div>
 
             <form onSubmit={this.onSubmit}>
             <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-4 spacing">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isId} onChange={this.onChangeId}/>
-                        <label class="form-check-label" for="flexSwitchCheckDefault">ID</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isType} onChange={this.onChangeType}/>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Type</label>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 spacing">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isType} onChange={this.onChangeType} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Type</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isStatus} onChange={this.onChangeStatus} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Status</label>
                     </div>
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isStatus} onChange={this.onChangeStatus} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Status</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isPriority} onChange={this.onChangePriority} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Priority</label>
                     </div>
                 </div>
 
@@ -188,22 +215,48 @@ render() {
             </div>
 
             <div className="row">
+                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isSeverity} onChange={this.onChangeSeverity} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Severity</label>
+                    </div>
+                </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 spacing">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isSummary} onChange={this.onChangeSummary} />
                         <label class="form-check-label" for="flexSwitchCheckDefault">Summary</label>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                <div className="col-lg-3 col-md-4 col-sm-4">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isProduct} onChange={this.onChangeProduct} />
                         <label class="form-check-label" for="flexSwitchCheckDefault">Product</label>
                     </div>
                 </div>
+
+                <br/>
+                <br/>
+                <br/>
+
+            </div>
+
+            <div className="row">
+                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isPlatform} onChange={this.onChangePlatform} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Platform</label>
+                    </div>
+                </div>
+                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isResolution} onChange={this.onChangeResolution} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Resolution</label>
+                    </div>
+                </div>
                 <div className="col-lg-3 col-md-4 col-sm-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isSeverity} onChange={this.onChangeSeverity} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Severity</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isTarget_milestone} onChange={this.onChangeTarget_milestone} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Target Milestone</label>
                     </div>
                 </div>
 
@@ -216,20 +269,20 @@ render() {
             <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-4 spacing">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isPriority} onChange={this.onChangePriority} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Priority</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isClassification} onChange={this.onChangeClassification} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Classification</label>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 spacing">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isLastChangeTime} onChange={this.onChangeLastChangeTime} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Last Change Time</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isIs_confirmed} onChange={this.onChangeIs_confirmed} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Is Confirmed</label>
                     </div>
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isAssignedToDetails} onChange={this.onChangeAssignedToDetails} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Assigned to details</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isIs_open} onChange={this.onChangeIs_open} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Is Open</label>
                     </div>
                 </div>
 
@@ -242,26 +295,22 @@ render() {
             <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-4 spacing">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isCreatorDetails} onChange={this.onChangeCreatorDetails} />
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isQa_contact} onChange={this.onChangeQa_contact} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">QA Contact</label>
+                    </div>
+                </div>
+                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isCreator_detail} onChange={this.onChangeCreator_detail} />
                         <label class="form-check-label" for="flexSwitchCheckDefault">Creator Details</label>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isCreationTime} onChange={this.onChangeCreationTime} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Creation Time</label>
-                    </div>
-                </div>
                 <div className="col-lg-3 col-md-4 col-sm-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isQaContactDetails} onChange={this.onChangeQaContactDetails} />
-                        <label class="form-check-label" for="flexSwitchCheckDefault">QA Contact details</label>
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isAssigned_to_detail} onChange={this.onChangeAssigned_to_detail} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Assigned To Details</label>
                     </div>
                 </div>
-
-                <br/>
-                <br/>
-                <br/>
 
                 <br/>
                 <br/>
@@ -270,8 +319,31 @@ render() {
             </div>
 
             <div className="row">
-                <div className="col-lg-8"></div>
-                <div className="col-lg-4 col-md-6 col-sm-6"><button className="btn btn-sm submitpreferencesbtn btn-secondary" onSubmit={this.onSubmit}
+                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isLast_change_time} onChange={this.onChangeLast_change_timet} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Last Change Time</label>
+                    </div>
+                </div>
+                <div className="col-lg-4 col-md-4 col-sm-4 spacing">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={this.state.isCreation_time} onChange={this.onChangeCreation_time} />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Creation Time</label>
+                    </div>
+                </div>
+
+                <br/>
+                <br/>
+                <br/>
+
+                <br/>
+                <br/>
+
+            </div>
+
+            <div className="row">
+                <div className="col-lg-10"></div>
+                <div className="col-lg-2 col-md-6 col-sm-6"><button className="btn btn-sm submitpreferencesbtn btn-secondary" onSubmit={this.onSubmit}
                 onClick={this.routeChange}>Submit Preferences</button></div>
             </div>
 

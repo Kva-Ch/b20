@@ -2,9 +2,10 @@ import * as Constants from "../constants.js";
 import axios from 'axios';
 
 /* for a specific month */
-async function FilterByDayApi(month) {
+async function FilterByDayApi(month, year) {
 
-    var url = Constants.base_url + "/auth/filterByDays/?year=" + 2000 + "&userId=" + 4477 + "&month=" + 12;
+    const userid = localStorage.getItem('uid');
+    var url = Constants.base_url + "/auth/filterByDays/?year=" + year + "&userId=" + userid + "&month=" + month;
 
     var config = {
       method: 'get',
