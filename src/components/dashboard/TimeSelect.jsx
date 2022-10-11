@@ -4,26 +4,23 @@ import YearLineChart from "./YearLineChart";
 import FilterByMonthApi from "../../controllers/FilterByMonthApi";
 import FilterByDayApi from "../../controllers/FilterByDayApi";
 import FilterAcrossYearsApi from "../../controllers/FilterAcrossYearsApi";
+import FilterByDateApi from "../../controllers/FilterByDateApi";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import onClickOutside from 'react-onclickoutside'
+import {useDetectClickOutside} from 'react-detect-click-outside';
 
 function TimeSelect(props) {
 
   let years = []
   const [Year, changeYear] = useState('Year');
   const [Month, changeMonth] = useState('Month');
-  const [value, onChange] = useState(new Date());
+  const [date, setDate] = useState(new Date());
 
   const [load, setLoad] = useState(0);
 
-  for (let year = 1996; year <= new Date().getFullYear(); year++) {
-    years.push(<button onClick={(e) => {
-        props.setStatus1(1);
-        props.setStatus2(year);
-        changeYear(e.target.value);
-        callYear(year);
-      }} class="dropdown-item" type="button" value={year}>{year}</button>)
-  }
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [clickCalendar, setClickCalendar] = useState(0);
 
   const [monthsInfo, setMonthsInfo] = useState([]);
   const [daysInfo, setDaysInfo] = useState([]);
@@ -40,6 +37,34 @@ function TimeSelect(props) {
     "Oct": 10,
     "Nov": 11,
     "Dec": 12
+  }
+
+  const locale = 'fr-CA';
+
+  const handleChange = value => {
+    setDate(value);
+    setShowCalendar(false);
+  };
+
+  for (let year = 1996; year <= new Date().getFullYear(); year++) {
+    years.push(<button onClick={(e) => {
+        props.setStatus1(1);
+        props.setStatus2(year);
+        changeYear(e.target.value);
+        callYear(year);
+      }} class="dropdown-item" type="button" value={year}>{year}</button>)
+  }
+
+  async function callDateApi(){
+    const dd = String(date.getDate()).padStart(2, '0');;
+    const mm = String(date.getMonth()+1).padStart(2, '0');;
+    const yyyy = String(date.getFullYear());
+    const finalDate = yyyy + "-" + mm + "-" + dd;
+    const temp = await FilterByDateApi(finalDate);
+    props.setDateData(temp);
+    props.setDateValue(finalDate);
+    props.setStatus1(3);
+    props.setStatus2(1);
   }
 
   async function callYear(year) {
@@ -178,13 +203,32 @@ function TimeSelect(props) {
       </div>
 
       <div className="col datecol">
-        <div class="dropdown">
+        {/* <div class="dropdown">
           <button className="btn generalbtn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Date</button>
           <div class="dropdown-menu dropdown-menu-end">
-            <Calendar onChange={onChange} value={value}/>
+            <Calendar onChange={setDate} value={date}/>
           </div>
-        </div>
+        </div> */
+        }
+        <button className="btn generalbtn btn-secondary dropdown" onClick={(e) => setClickCalendar(!clickCalendar)}>
+          Date
+        </button>
       </div>
+      {
+        clickCalendar == 1
+          ? <div className="col calendarcol">
+              <input className="date-display" value={date.toLocaleDateString()} onFocus={() => setShowCalendar(false)}/>
+              <div className="row">
+                <div className="col-lg-6"><Calendar className="calendar" value={date} onChange={handleChange}/></div>
+                <div className="col-lg-6">
+                  <button className="btn generalbtn btn-secondary " onClick={(e) => {setClickCalendar(!clickCalendar); callDateApi();}}>
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          : <div></div>
+      }
 
     </div>
 

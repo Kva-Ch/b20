@@ -71,16 +71,17 @@ function Profile(props) {
     }
   }
 
-  function editProfile(){
+  async function editProfile(){
     const body = {
       ID: ID,
       UserId: UserId,
       Name: Name,
       Email: Email
     };
-    let temp = EditProfileApi(body);
-    if(temp===200){
-      navigate("/profile");
+    let temp = await EditProfileApi(body);
+    console.log("Temp is:", temp);
+    if(temp==200){
+      window.location.href = '/profile';
     } else{
       navigate("/home");
     }

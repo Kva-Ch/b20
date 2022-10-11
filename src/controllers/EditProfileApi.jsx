@@ -3,7 +3,7 @@ import axios from 'axios';
 
 async function editProfileApi(body) {
   const userid = localStorage.getItem('uid');
-  const url  = Constants.base_url + '/auth/editprofile/';
+  const url  = Constants.base_url + '/editprofile/' + userid;
   let returnValue = 400;
   console.log(body);
 
@@ -16,7 +16,7 @@ async function editProfileApi(body) {
   await axios(config).then(function(response) {
     // console.log(response.data, typeof(response.data["bugs"]));
     // console.log(response.data.bugs[0]);
-    alert(response.data);
+    // alert(response.data);
     console.log(response.data);
     returnValue = 200;
   }).catch(function(error) {

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 async function progressApi() {
   const userid = localStorage.getItem('uid');
-  const url  = Constants.base_url + '/auth/ProfileInfo/' + userid;
+  const url  = Constants.base_url + '/ProfileInfo/' + userid;
   let returnValue = [];
 
   var config = {

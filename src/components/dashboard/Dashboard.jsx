@@ -5,6 +5,7 @@ import TaskMeter from './TaskMeter';
 import TimeSelect from './TimeSelect';
 import YearLineChart from "./YearLineChart";
 import YearBarGraph from "./YearBarGraph";
+import DateBarGraph from "./DateBarGraph";
 import FilterByMonthApi from "../../controllers/FilterByMonthApi";
 import FilterByDayApi from "../../controllers/FilterByDayApi";
 import FilterAcrossYearsApi from "../../controllers/FilterAcrossYearsApi";
@@ -19,6 +20,13 @@ function Dashbaord(props) {
   const [currentWeekInfo, setCurrentWeekInfo] = useState([]);
   const [yearData, setYearData] = useState(new Array(12).fill(0));
   const [monthData, setMonthData] = useState(new Array(30).fill(0));
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');;
+  const mm = String(today.getMonth()+1).padStart(2, '0');;
+  const yyyy = String(today.getFullYear());
+  const todayDate = yyyy+"-" + mm + "-" + dd;
+  const [date, setDateValue] = useState(todayDate);
+  const [dateData, setDateData] = useState([]);
   let numberOfYears = new Date().getFullYear() - 1996;
   const [acrossYearsInfo, setAcrossYearsInfo] = useState(new Array(numberOfYears).fill(0));
   const [progress, setProgress] = useState(0);
@@ -53,7 +61,7 @@ function Dashbaord(props) {
     setLoad(1);
   }
 
-  // status 1 : 0 -> week 1 -> year 2 -> month 3 -> date 4-> line chart
+  // status 1 : 0 -> week, 1 -> year, 2 -> month, 3 -> date, 4-> line chart
   function toggleButtons(status1, status2) {
 
     if (status1 == 0) {
@@ -123,6 +131,10 @@ function Dashbaord(props) {
             <div className="graphdiv"><MonthBarGraph monthData={monthData} numberOfDays="31"/></div>
           </div>/* across years */
       }
+    } else if(status1 == 3) {
+      return <div className="col-lg-8 col-md-7 col-sm-8">
+        <div className="graphdiv"><DateBarGraph date={date} dateData = {dateData}/></div>
+      </div>
     } else if (status1 == 4) {
       return <div className="col-lg-8 col-md-7 col-sm-8">
         <div className="graphdiv"><YearLineChart acrossYearsInfo={acrossYearsInfo}/></div>
@@ -142,7 +154,7 @@ function Dashbaord(props) {
       {toggleButtons(status1, status2)}
 
       <div className="col-lg-4 col-md-4 col-sm-4">
-        <div className="timeselect"><TimeSelect setStatus1={swap} status1={status1} setStatus2={setStatus2} status2={status2} setYearData={setYearData} setMonthData={setMonthData}/></div>
+        <div className="timeselect"><TimeSelect setStatus1={swap} status1={status1} setStatus2={setStatus2} status2={status2} setYearData={setYearData} setMonthData={setMonthData} setDateValue={setDateValue} setDateData = {setDateData}/></div>
       </div>
 
     </div>
